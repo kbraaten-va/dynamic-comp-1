@@ -11,7 +11,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js', 'scss']
   },
 
   module: {
@@ -40,7 +40,8 @@ module.exports = {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         loader: 'raw-loader'
-      }
+      },
+      {test: /\.scss$/, loader: 'raw-loader!sass-loader'},
     ]
   },
 

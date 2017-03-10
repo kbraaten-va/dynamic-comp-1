@@ -1,1 +1,1 @@
-export { PlaygroundModule } from './playground.module'
+export { PlaygroundModule } from './playground.module';

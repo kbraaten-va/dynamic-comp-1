@@ -1,11 +1,20 @@
-import { Component } from '@angular/core'
+import {Component, OnInit} from '@angular/core';
+
+import {DataService} from './data.service';
 
 @Component({
     selector: 'playground',
-    styles: [`
-    `],
     template: `
-    Your code here...
+    {{data | json}}
     `
 })
-export class PlaygroundComponent {}
+export class PlaygroundComponent implements OnInit {
+
+    data: any[];
+
+    constructor(private dataService: DataService) {}
+
+    ngOnInit() {
+        this.dataService.getData().subscribe(data => this.data = data);
+    }
+}
