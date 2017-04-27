@@ -1,4 +1,10 @@
-import {Component,Input, ViewChild, AfterContentInit, ViewContainerRef, ComponentFactoryResolver} from '@angular/core';
+import {
+    Component,
+    Input,
+    ViewChild,
+    AfterContentInit,
+    ViewContainerRef
+} from '@angular/core';
 
 @Component({
     selector: 'playground',
@@ -8,15 +14,10 @@ import {Component,Input, ViewChild, AfterContentInit, ViewContainerRef, Componen
     `
 })
 export class PlaygroundComponent implements AfterContentInit {
-    @ViewChild('container', {read: ViewContainerRef}) container: ViewContainerRef;
-
-    constructor(private resolver: ComponentFactoryResolver) {}
+    @ViewChild('container') container: ViewContainerRef;
 
     ngAfterContentInit(): void {
         console.log(this.container);
-        const riddleCF = this.resolver.resolveComponentFactory(RiddleComponent);
-        const riddleComp = this.container.createComponent(riddleCF);
-        riddleComp.instance.textInput = "asdf"
     }
 }
 

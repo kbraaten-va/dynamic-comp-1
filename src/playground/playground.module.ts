@@ -17,7 +17,6 @@ import {DataService} from './data.service';
   ],
   declarations: [PlaygroundComponent, RiddleComponent],
   exports: [PlaygroundComponent],
-  providers: [DataService],
-  entryComponents: [RiddleComponent]
+  providers: [DataService]
 })
 export class PlaygroundModule {}
