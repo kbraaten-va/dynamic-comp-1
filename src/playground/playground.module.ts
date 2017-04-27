@@ -5,6 +5,7 @@ import {MaterialModule} from '@angular/material'
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemDataService} from './in-memory-data.service';
 import {PlaygroundComponent} from './playground.component';
+import {RiddleComponent} from './playground.component';
 
 import {DataService} from './data.service';
 
@@ -14,8 +15,9 @@ import {DataService} from './data.service';
     MaterialModule.forRoot(),
     InMemoryWebApiModule.forRoot(InMemDataService, {delay: 1000})
   ],
-  declarations: [PlaygroundComponent],
+  declarations: [PlaygroundComponent, RiddleComponent],
   exports: [PlaygroundComponent],
-  providers: [DataService]
+  providers: [DataService],
+  entryComponents: [RiddleComponent]
 })
 export class PlaygroundModule {}
